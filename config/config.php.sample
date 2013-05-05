@@ -1,0 +1,37 @@
+<?php if( !defined('IN_VA') ) exit;
+
+// DONNEE DE CONNEXION A LA BASE DE DONNEES
+$DB_Configuration = array(
+'type'			=>	'mysql',
+'serveur' 		=> '127.0.0.1',
+'utilisateur' 	=> 'root',
+'password' 		=> '',
+'base' 			=> 'va010',
+);
+
+define('PREFIX', 'va_');		// Prefix des tables
+define('IN_PRODUCTION', false);	// Active le mode developpeur
+
+$config = array(
+'format_date'				=>	"%d/%m/%Y - %H:%M",
+'url'						=>	'http://127.0.0.1/',
+'url_dir'					=>	'va/',
+);
+
+define('USE_TABLE_CONFIG',1);
+
+define('ADM_AEROPORT_LEVEL', 2);
+define('ADM_CANDIDATURE_LEVEL', 2);
+define('ADM_COMPAGNIE_LEVEL', 2);
+define('ADM_BLOK_LEVEL', 2);
+define('ADM_EVENT_LEVEL',2);
+define('ADM_CONTACT_LEVEL', 2);
+define('ADM_DOWNLOAD_LEVEL', 2);
+define('ADM_FLEET_LEVEL', 2);
+define('ADM_NEWS_LEVEL', 2);
+define('ADM_PAGE_LEVEL', 2);
+define('ADM_PIREP_LEVEL', 1);
+define('ADM_PREFERENCE_LEVEL', 2);
+define('ADM_RANK_LEVEL', 1);
+define('ADM_USER_LEVEL', 2);
+define('ADM_SCHEDULES_LEVEL', 2);

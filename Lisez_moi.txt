@@ -1,0 +1,11 @@
+- Modifier le fichier config/config.php en reseignant les informations de base de données et url
+- Envoyer le contenu du dossier sur votre serveur
+- Mettre le CHMOD 0777 sur les dossier suivant
+	* cache/
+	* web/upload
+	* log/
+- Connectez vous a l administration de votre base de donnees et importer la fichier install_base.sql
+- Vous devriez normalement pouvoir utiliser votre site
+
+Identifiant par defaut : admin
+mot de passe : sharkphp

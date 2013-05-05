@@ -1,0 +1,10 @@
+.fleft{float:left;}
+.fright{float:right;}
+.clear{clear:both;}
+
+.calendrier{height:400px;width:1000px;border-collapse: collapse; border:solid 1px;}
+.calendrier_jour{height:15px;background-color:#2E90BD;color:#FFF;border:solid 1px black; width:14.28%;}
+.calendrier_day_number{ height:20%; border-bottom:solid 1px;}
+.calendrier_programmation_matin{height:29px; min-height:29px; border-bottom:solid 1px; width:100%;}
+.calendrier_programmation_aprem{height:29px; min-height:29px; border-top:solid 1px;width:100%;}
+.calendrier_cellule{border-collapse: collapse; border:solid 1px;vertical-align:top;}

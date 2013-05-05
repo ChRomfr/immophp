@@ -1,0 +1,206 @@
+<?php
+
+class utilisateurController extends BaseutilisateurController{
+
+	public function indexAction(){
+		if( $_SESSION['utilisateur']['id'] == 'Visiteur')
+			return $this->registerAction();
+		else
+			return $this->profilAction();
+	}
+	
+	
+	/**
+	 * Affiche et traite le formulaire d enregistrement par facebook
+	 * @return html
+	 */
+	public function registerByFacebookAction(){
+		
+		if( $_SESSION['utilisateur']['id'] != 'Visiteur') return $this->indexAction ();
+		
+		global $config;
+		
+		if( $this->app->HTTPRequest->postExists('user') ):
+			// Traitement du formulaire
+			$this->load_model('utilisateur');
+			$user = new utilisateur($this->registry->HTTPRequest->postData('user') );
+			$this->load_manager('utilisateur');
+			
+			if( $user->isValid() == false )
+				goto print_form;
+				
+			if( $user->validPassword($_POST['user']['password2']) == false ){
+				$this->registry->smarty->assign('print_error', $this->lang['Mot_de_passe_invalide']);
+				goto print_form;
+			}
+			
+			$user->id = getUniqueID();
+			
+			$user->setActif(0);	
+			
+			$user->cryptPassword();
+			$user->register_on = time();
+			$user->isAdmin = 0;
+			$user->last_connexion = 0;
+			
+			// Date anniversaire
+			if( !empty($user->date_anniversaire) ):
+				$Tmp = explode('/', $user->date_anniversaire);
+				$user->date_anniversaire = $Tmp[2]. '-'. $Tmp[1] . '-' . $Tmp[0];
+			endif;
+			
+			
+			// Traitement activation
+			if( $config['user_activation'] == 'admin' || $config['user_activation'] == 'mail' ){
+				$user->actif = 0;
+				$user->setTokenActivation( getUniqueID() );
+			}else{
+				$user->actif = 1;
+			}
+			
+			// Envoie email si mail
+			if( $config['user_activation'] == 'mail' ){
+				$this->app->smarty->assign(array('user' => $user));
+				$corp_message = $this->app->smarty->fetch( VIEW_PATH . 'utilisateur' . DS . 'mail' . DS . 'mail_activation.tpl' );
+				sendEmail($user->getEmail() , $config['email'], $this->lang['Enregistrement_sur'] .' '. $config['titre_site'], strip_tags($corp_message), $corp_message);
+			}
+			
+			$this->manager->utilisateur->insert($user);
+			
+			if( $config['user_activation'] == 'mail' ):
+				$Message = $this->lang['Compte_cree_require_activation_email'];
+			elseif($config['user_activation'] == 'admin' ):
+				$Message = $this->lang['Compte_cree_require_admin'];
+			elseif( $config['user_activation'] == 'auto' ):
+				$Message = $this->lang['Compte_cree'];
+			endif;
+			
+			return $this->redirect(getLink('index'), 3, $this->lang['Compte_cree']);
+		endif;
+		
+		print_form:
+		
+		$this->getFormValidatorJs();
+		
+		return $this->app->smarty->fetch(VIEW_PATH . 'utilisateur' . DS . 'register_by_facebook.tpl');
+	} 
+	/*
+	public function profilAction(){
+		if( $_SESSION['utilisateur']['id'] == 'Visiteur'){ header('location:'. getLink('index') ); exit; }
+	
+		//$this->load_manager('rank');
+		$this->load_manager('utilisateur');
+		
+		$this->registry->smarty->assign(array(
+			//'rank'		=>	$this->manager->rank->getById($_SESSION['utilisateur']['grade_id']),
+			'ctitre'		=>	'Profil',
+		));
+		
+		return $this->app->smarty->fetch(VIEW_PATH . 'utilisateur' . DS . 'profil.tpl');
+	}
+	*/
+	/**
+	*	Affiche et traite le formulaire de changement de mot de passe
+	*	@return void
+	*/
+/*
+	public function changePasswordAction(){
+		if( $_SESSION['utilisateur']['id'] == 'Visiteur'){ header('location:'. getLink('index') ); exit; }
+		
+		if( $this->registry->HTTPRequest->postExists('password') ){
+			$data = $this->registry->HTTPRequest->postData('password');
+			
+			if( empty($data['ancien']) || empty($data['nouveau']) || empty($data['confirmation']) || strlen($data['nouveau']) < 6 || $data['nouveau'] != $data['confirmation'] )
+				goto print_form;
+				
+			if( $this->registry->db->count(PREFIX . 'user', array('id =' => $_SESSION['utilisateur']['id'], 'password =' => cryptPassword($data['ancien'], $_SESSION['utilisateur']['identifiant']))) != 1)
+				goto print_form;
+				
+			$this->registry->db->update(PREFIX . 'user', array('password' => cryptPassword($data['nouveau'], $_SESSION['utilisateur']['identifiant'])), array('id =' => $_SESSION['utilisateur']['id']));
+			
+			return $this->redirect(getLink('utilisateur/index'), 3, $this->lang['Mot_de_passe_change']); 
+		}
+		
+		print_form:
+		$this->registry->addJS('jquery-1.6.2.min.js');
+		$this->getFormValidatorJs();
+		return $this->registry->smarty->fetch(VIEW_PATH . 'utilisateur' . DS . 'changePassword.tpl');
+		
+	}
+	*/
+	/**
+	*	Gere l edition du profil
+	*	@return void
+	*/
+	public function editAction(){
+		if( $_SESSION['utilisateur']['id'] == 'Visiteur'){ header('location:'. getLink('index') ); exit; }
+		
+		if( $this->registry->HTTPRequest->postExists('user') ){
+			$user = $this->registry->HTTPRequest->postData('user');
+			$this->registry->db->update(PREFIX . 'user', $user, array('id =' => $user['id']) );
+			$this->registry->session->updateSession($this->registry->db->get_one(PREFIX . 'user', array('id =' => $user['id'])) );
+			return $this->redirect(getLink('utilisateur/index'), 3, $this->lang['Profil_modifie']); 
+		}
+		
+		$this->getFormValidatorJs();
+		return $this->registry->smarty->fetch(VIEW_PATH . 'utilisateur' . DS . 'edit.tpl');
+	}
+	
+	
+	/*
+	public function activationAction( ){
+		if(  $this->app->HTTPRequest->getExists('reg') == false ) exit();
+		
+		$Reg = explode('|', $this->app->HTTPRequest->getData('reg') );
+		
+		if( !is_array($Reg) ) exit();		
+		if( $this->app->db->count(PREFIX . 'user', array('id =' => $Reg[0], 'token_activation =' => $Reg[1], 'actif =' => 0)) != 1) exit();
+		
+		$user = $this->app->db->get_one(PREFIX . 'user', array('id =' => $Reg[0], 'token_activation =' => $Reg[1], 'actif =' => 0)) ;
+		
+		$user['actif']  = 1;
+		$user['token_activation'] = '';
+		
+		$this->app->db->update(PREFIX . 'user', $user);
+		
+		return $this->redirect(getLink('connexion/index'),10, $this->lang['Votre_compte_est_active']);
+		
+	}
+	*/
+	public function signatureAction(){
+	
+		if( $this->app->HTTPRequest->postExists('signature') ):
+			$Signature = $this->app->HTTPRequest->postData('signature');
+			
+			if( !isset($Signature['signature_img']) ) goto printform;
+			
+			// Formatage couleur
+			if( $Signature['signature_color_text'] != '' ):
+				$Signature['signature_color_text'] = str_replace('rgb(','',$Signature['signature_color_text']);
+				$Signature['signature_color_text'] = str_replace(')','',$Signature['signature_color_text']);
+			endif;
+			
+			$this->app->db->update(PREFIX . 'user', $Signature, array('id =' => $_SESSION['utilisateur']['id']));
+			$_SESSION['utilisateur']['signature_img'] = $Signature['signature_img'];
+			$_SESSION['utilisateur']['signature_color_text'] = $Signature['signature_color_text'];
+			//var_dump($Signature);
+			//return $this->redirect( getLink('utilisateur/index'), 3, $this->lang['Signature_enregistree']);
+		endif;
+		
+		printform:
+		
+		// Recuperation des images dans le dossier
+		$Tpl = getFilesInDir( ROOT_PATH . 'web' . DS . 'images' . DS . 'signature' . DS);
+		unset($Tpl['signature.php']);	// on supprime le fichier de generation des signatures
+		
+		$this->app->addJS('mColorPicker.js');
+		
+		$this->app->smarty->assign(array(
+			'c_titre'		=>	$this->lang['Signature'],
+			'Tpls'			=>	$Tpl,
+		));
+		
+		return $this->app->smarty->fetch( VIEW_PATH . 'utilisateur' . DS . 'signature.tpl');
+		
+	}	
+}

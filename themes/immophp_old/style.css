@@ -1,0 +1,617 @@
+/* BALISE GENERIQUE */
+body{
+	background-image: url(images/background.jpg);
+	margin:0px;	
+	color:#646567;
+	font-family: Verdana, Tahoma, sans-serif;
+	font-size: 11px;
+}
+
+a{color: #646567;}
+img{border:none;}
+h3{
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin-bottom: 20px;
+    font-size: 21px;
+    line-height: 40px;
+    color: #333333;
+    border: 0;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+h3 a{ font-size: 21px; color: #333333; }
+
+
+#contenu{
+    margin:auto;
+    width: 1000px;	
+	background-color:#FFFFFF;
+	border:2px solid #e2e3e4;
+}
+
+#header
+{
+	background-color: #FFFFFF;
+	height:110px;
+}
+
+#header_logo
+{
+	background-image:url(images/logo.jpg);
+	float:left;
+	margin-top : 20px;
+	margin-bottom: 20px;
+	margin-left : 20px;
+	width:72px;
+	height: 67px;
+}
+
+#header_txt
+{
+	margin-top : 10px;
+	margin-left : 110px;
+	font-size: 23pt;
+	color: #646567;
+}
+
+#separateur_hearder_conteneur{
+	background-image: url(images/barre_menu.jpg);
+	height:32px;
+}
+
+#wrap{
+	background: #FFFFFF;	
+	margin-top:15px;
+}
+
+#blockGauche{
+    float:left;
+    width:230px;
+}
+
+#blockGauche a{
+	color: #646567;
+}
+
+
+#blockGauche .bloc_gauche_titre{
+	background: #FFFFFF url(images/puce_bloc.jpg) left no-repeat ;  
+	font: 16px; 
+	padding-left:20px;
+	font-weight:bold; 
+	color: #000;
+}
+
+#blockCentre{ margin-left:260px; width:730px; overflow: hidden; padding-left:5px; padding-top:2px; padding-right: 2px;}
+
+
+#content_conteneur{
+	width:95%;
+	margin:auto;
+}
+
+#footer{
+
+	background-color:#646567;
+	height:183px;	 
+}
+
+#footer_txt{text-align:center; color:#ffffff; padding-top:80px;}	
+
+
+#bread{
+	font-size:9px;
+	color: #646567;
+}
+
+#bread a{
+	font-size:9px;
+	color: #646567;
+}
+
+
+
+/* GENERIQUE */
+.showData{
+	background:#f7f7f7;
+	background:-moz-linear-gradient(90deg, #ccc, #fff); /* Firefox */
+	background:-webkit-gradient(linear, left top, left bottom, from(#fff), to(#ccc)); /* Webkit */
+	border:1px solid #aaa;	
+	-moz-box-shadow:0 0 15px #aaa;
+	-webkit-box-shadow:0 0 15px #aaa;
+}
+
+.showData h1{border-bottom:1px solid #ccc;}
+.showData hr{border-bottom:1px solid #ccc;}
+
+
+/* ELEMENT INDEX */
+#CarteAgencesContener{float:left;}
+
+.carteAgenceTitre{
+    font-weight: bold;
+    text-align: center;
+    color:#fff;
+    background-color: #97BE0D;
+    text-transform:uppercase;
+    height:25px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+#PubInIndex{
+    float:left;
+    padding-left:15px;
+}
+
+/* START ELEMENT DERNIERE ANNONCE VISIBLE EN INDEX ET AGENCE */
+a.link_annonces_liste {
+    color:#434343;
+    text-decoration: none;
+}
+
+.annonce_contener{
+    float:left;
+    width:220px;
+    height:360px;
+    border:1px solid #dfe1e0;
+}
+
+.annonce_titre{
+    display:block;
+    border-top:1px solid #dfe1e0;
+    border-bottom:1px solid #dfe1e0;
+    height:36px;
+    padding:5px;
+    text-align: center;
+    color:#fff;
+    font-weight: bold;
+    background-color: #97BE0D;
+    font-size: 14px;
+    line-height: 19px;
+}
+.annonce_photo{
+    width:220px;
+    height:170px;
+}
+.annonce_description{
+    height:90px;
+}
+.annonce_infos_pied{
+    width:227px;
+    vertical-align: bottom;
+}
+
+.annonce_infos_prix{
+    font-weight: bold;
+    width: 227px;
+}
+
+.annonce_infos_reference{
+    font-style: italic;
+    font-size:12px;
+    width: 227px;
+}
+
+.annonce_separator{
+    width:5px;
+    height:1px;
+    float:left;
+}
+
+.annonce_separator_line{
+    height: 5px;
+}
+
+/* END ELEMENT DERNIERE ANNONCE VISIBLE EN INDEX ET AGENCE */
+
+/* ANNONCE/DETAIL */
+.annonce_detail_header_retour{padding-left:10px; padding-top:5px; width:250px; float:left;}
+.annonce_detail_header_retour:hover{padding-left:10px; padding-top:5px;background-color:#1CA9DD;width:250px;}
+.annonce_detail_header_retour a{font-weight: bold; color:#fff; text-decoration: none; size:18px;text-transform:uppercase;}
+.annonce_detail_header_print{float:right; padding-right:10px; padding-top:3px;}
+
+.annonce_detail_photo{
+    float:left;
+    width:310px;
+    min-height:270px;
+}
+
+.annonce_detail_description{
+    float:left;
+    margin-left:5px;
+    width:400px;
+}
+
+.annonce_detail_dep{
+   float:left;
+   width:310px; 
+   min-height:100px;
+}
+
+.annonce_detail_infos{float:left;margin-left:5px;width:300px;}
+.annonce_detail_titre{border: 1px solid #dfe1e0;}
+.adt_titre{float:left;height:40px;}
+
+.adt_titre h4{
+    margin: 0;
+    padding: 0 0 0 10px;
+    height: 40px;
+    line-height: 36px;
+    color: #434343;
+    font-size: 16px;
+    text-align: left;
+    overflow: hidden;
+    border-left: 1px solid #dfe1e0;
+    border-top: 1px solid #dfe1e0;
+    border-bottom: 1px solid #dfe1e0;
+    width:555px;
+}
+
+.adt_ref{
+    float:right;
+    height:40px;
+    color: #2ba9dc;
+    font-weight: bold;
+    font-style: italic;
+    padding-right:5px;
+    border: 1px solid #dfe1e0;
+    width:150px;
+    text-align:center;
+}
+
+.annonce_detail_header{
+    background: #97BE0D;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    height:30px;
+}
+
+.annonce_detail_top_infos{
+    float: left;
+    height:30px;
+    width: 310px;
+    border-left: 1px solid #dfe1e0;
+    border-right: 1px solid #dfe1e0;
+}
+
+#annonce_detail_contener{
+    border-left: 1px solid #dfe1e0;
+    border-right: 1px solid #dfe1e0;
+    border-bottom: 1px solid #dfe1e0;
+}
+
+.annonce_detail_top_infos_surface{
+    width:65px;
+    border-right: 1px solid #dfe1e0;
+    float:left;
+    text-align: center;
+    color: #97BE0D;
+    font-size: 14px;
+    font-weight: bold !important;
+}
+
+.annonce_detail_top_infos_prix{
+    float:left;
+    padding-left:20px;
+    color: #97BE0D;
+    font-size: 14px;
+    font-weight: bold !important;
+}
+
+/* FORMULAIRE DE CONTACT */
+
+.annonce_detail_form_contact{    
+	background-color:#97BE0D;
+    margin: 15px 0 0 13px;
+    padding: 14px;
+    width:650px;
+}
+
+.annonce_detail_form_contact label{
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    color: #9e9e9e;
+    font-size: 11px;
+    font-style: italic;
+}
+
+.annonce_detail_form_contact input[type="text"], .annonce_detail_form_contact input[type="email"]{
+    width: 310px;
+    height: 20px;
+    border: 1px solid #9e9e9e;
+    margin-bottom: 10px;
+    color: #9e9e9e;
+    font-style: italic;
+}
+
+.annonce_detail_form_contact textarea{
+    border: 1px solid #9E9E9E;
+    color: #9E9E9E;
+    font-style: italic;
+    height: 86px;
+    width: 310px;
+}
+
+.ChampForm{ position: relative;}
+#formContactAnnonce h1, #formContactAgence h1{color:#fff;text-transform:uppercase;margin-bottom: 10px;}
+
+/* BLOC RECHERCHE */
+#blokRechercheBien label{
+    margin:0;
+    padding:0 0 0 10px;
+    color:#434343;
+    background: url(images/puce-search.gif) no-repeat center left;
+}
+
+#blokRechercheBien select{
+    margin:0;
+    padding:0;
+    color:#646567;
+    height:20px;
+    border:1px solid #dfe1e0;
+    width:100%;
+}
+
+#blokRechercheBien input[type="text"]{
+    width:76px;
+    margin:0;
+    padding:0;
+    color:#646567;
+    height:16px;
+    border:1px solid #dfe1e0;
+    border-right: none;
+    float:left;
+}
+
+#blokRechercheBien span.devise{
+    margin: 0;
+    padding: 0 5px;
+    color: #434343;
+    height: 16px;
+    line-height: 16px;
+    border: 1px solid #dfe1e0;
+    border-left: none;
+    display: block;
+    float: left;
+    background: #fff;
+    text-align: center;
+}
+
+.blokRechercheSeparator{width:10px; height:1px;float:left;}
+.blokRechercheSubmit{text-align: right;}
+
+
+/* BOUTON RECHERCHE DU BLOK ET ENVOYER FORMULAIRE DE CONTACT */
+.blokRechercheSubmit input[type="submit"], #formContactAnnonce input[type="submit"],  #formContactAgence input[type="submit"]{
+    background-color: #646567; 
+    color:#fff; 
+    font-weight: bold; 
+    padding:5px;
+    border: 1px solid #dfe1e0;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.blokRechercheSubmit input[type="submit"]:hover, #formContactAnnonce input[type="submit"]:hover, #formContactAgence input[type="submit"]:hover  {
+    background-color: #646567; 
+    color:#fff; 
+    font-weight: bold; 
+    padding:5px;
+    border: 1px solid #97BE0D;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    border-radius: 5px;
+}
+
+
+/* AGENCE DETAIL */
+.agence_detail_titre{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    height: 34px;
+    line-height: 34px;
+    text-align: center;
+    border: 1px solid #dfe1e0;
+    background: #AADA00;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 22px;
+    font-weight: normal;
+    -webkit-border-radius: 10px 10px 0 0;
+    -moz-border-radius: 10px 10px 0 0;
+    border-radius: 10px 10px 0 0;
+}
+
+.agence_detail_description{padding-top:3px; width:500px; float:left;}
+.agence_detail_photo{padding-top:3px; float:left}
+.agence_detail_photo img {width:150px;}
+.agence_detail_coordonnees{padding-top:5px; width:280px;float:left; text-align: right;}
+.agence_detail_map{padding-top:5px; float:right; padding-right:15px;}
+
+/* MENU */
+.menu ul {}
+.menu li{list-style-type: none; height: 22px;}
+.menu{text-decoration: none;font-weight: bold;padding-left:1px;padding-top:1px;padding-bottom: 1px; margin: 0}
+.menu a{color: #646567; text-decoration: none;}
+.menu a:hover{color: #646567; text-decoration: underline;} 
+
+/* Bloc Actualite */
+.bloc_actualite ul {text-decoration: none;font-weight: bold;padding-left:1px;padding-top:1px;padding-bottom: 1px; margin: 0}
+.bloc_actualite li{list-style-type: none; height: 22px;}
+.bloc_actualite{text-decoration: none;font-weight: bold;padding-left:1px;padding-top:1px;padding-bottom: 1px; margin: 0}
+.bloc_actualite a{color: #646567; text-decoration: none;}
+.bloc_actualite a:hover{color: #646567; text-decoration: underline;}
+
+/* BLOC GAUCHE */
+.bloc_gauche_conteneur a{
+	color: #676767;
+	font-weight:bold; 
+}
+
+
+.bloc_gauche_corp{
+	background-color:#aaaaaa;
+	padding-left:3px;
+	padding-top: 5px;
+	width:230px;
+}
+
+.bloc_gauche_footer{
+	background: #e7e7e8 ;  
+	height:5px;	
+}
+
+img{
+    border:none;
+}
+
+.infos{
+    font-weight: bold;
+    color:#FF0000;
+    border:1px solid #2A2D2C;
+    background-color: #E0DFE3;
+    margin:auto;
+    width:50%;
+    text-align:center;
+}
+
+/* CODE DE MISE EN FORME DES FORMULAIRES */
+
+form.form{
+	background:#f7f7f7;
+	background:-moz-linear-gradient(90deg, #ccc, #fff); /* Firefox */
+	background:-webkit-gradient(linear, left top, left bottom, from(#fff), to(#ccc)); /* Webkit */
+	border:1px solid #aaa;
+	-moz-box-shadow:0 0 15px #aaa;
+	-webkit-box-shadow:0 0 15px #aaa;
+}
+
+form.form h1{ border-bottom:1px solid #ccc; }
+form.form dt:hover label{ color:#0459b7; }
+form dl span a{ color:#A09C82; }
+
+/* -- ELEMENT DU FORMULAIRE -- */
+form.form input[type=text], div.showData input[type=text],
+form.form input[type=url], div.showData input[type=url],
+form.form input[type=email], div.showData input[type=email],
+form.form input[type=password], div.showData input[type=password],
+form.form textarea{
+	background: rgba(255, 255, 255, 0.9);
+	background:-moz-linear-gradient(90deg, #fff, #eee); /* Firefox */
+	background:-webkit-gradient(linear, left top, left bottom, from(#eee), to(#fff), color-stop(0.2, #fff)); /* Webkit */
+	border:1px solid #aaa;
+	-moz-box-shadow:0 0 3px #aaa;
+	-webkit-box-shadow:0 0 3px #aaa;
+}
+
+form.form input[type=text]:focus, div.showData input[type=text]:focus,
+form.form input[type=url]:focus, div.showData input[type=url]:focus,
+form.form input[type=email]:focus, div.showData input[type=email]:focus,
+form.form input[type=password], div.showData input[type=password]:focus,
+form.form textarea:focus{
+	border-color:#093c75;
+	-moz-box-shadow:0 0 3px #0459b7;
+	-webkit-box-shadow:0 0 3px #0459b7;
+}
+
+form.form select, div.showData select{
+	-moz-box-shadow:0 0 3px #aaa;
+	-webkit-box-shadow:0 0 3px #aaa;
+}
+
+form.form select, div.showData select:active,
+form.form select, div.showData select:focus{
+	border:1px solid #093c75;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	-moz-box-shadow:0 0 3px #0459b7;
+	-webkit-box-shadow:0 0 3px #0459b7;
+}
+
+form.form input[type=submit], div.showData input[type=submit],
+form.form a.submit,
+a.submit{
+	background:#0459b7;
+	background:-moz-linear-gradient(90deg, #555555, #676767); /* Firefox */
+	background:-webkit-gradient(linear, left top, left bottom, from(#555555), to(#676767)); /* Webkit */
+	border:1px solid #fff;
+	-moz-box-shadow:0 1px 0 #fff;
+	-webkit-box-shadow:0 1px 0 #fff;
+	color:#fff;
+	text-shadow:0 1px 1px #333;
+}
+
+form.form input[type=submit]:hover,
+form.form a.submit:hover,
+a.submit:hover{
+	background:#067cd3;
+	background:-moz-linear-gradient(90deg, #067cd3, #0bcdff);
+	background:-webkit-gradient(linear, left top, left bottom, from(#0bcdff), to(#067cd3));
+	border-color:#093c75;
+}
+
+form.form input[type=submit]:active,
+form.form input[type=submit]:focus,
+form.form a.submit:active,
+form.form a.submit:focus,
+a.submit:active, 
+a.submit:focus{
+	background:#0bcdff;
+	background:-moz-linear-gradient(90deg, #0bcdff, #067cd3);
+	background:-webkit-gradient(linear, left top, left bottom, from(#067cd3), to(#0bcdff));
+	border-color:#093c75;
+}
+
+
+/* CSS POUR FAIRE LES BOUTONS ET LIEN HORS SHOWDATA ET FORM */
+input.submit[type=submit],
+a.submit,
+a.submit{
+	background:#0459b7;
+	background:-moz-linear-gradient(90deg, #0459b7, #08adff); /* Firefox */
+	background:-webkit-gradient(linear, left top, left bottom, from(#08adff), to(#0459b7)); /* Webkit */
+	border:1px solid #093c75;
+	-moz-box-shadow:0 1px 0 #fff;
+	-webkit-box-shadow:0 1px 0 #fff;
+	color:#fff;
+	text-shadow:0 1px 1px #333;
+}
+
+input.submit[type=submit]:hover,
+a.submit:hover{
+	background:#067cd3;
+	background:-moz-linear-gradient(90deg, #067cd3, #0bcdff);
+	background:-webkit-gradient(linear, left top, left bottom, from(#0bcdff), to(#067cd3));
+	border-color:#093c75;
+}
+
+
+input.submit[type=submit]:active,
+input.submit[type=submit]:focus,
+a.submit:active,
+a.submit:focus{
+	background:#0bcdff;
+	background:-moz-linear-gradient(90deg, #0bcdff, #067cd3);
+	background:-webkit-gradient(linear, left top, left bottom, from(#067cd3), to(#0bcdff));
+	border-color:#093c75;
+}
+
+form dt label {
+color: #676767;
+}
+
+/* Footer */
+#footer{background: #555555 repeat-x top left;height:130px; position: relative; width:1000px; margin:auto;}
+#footer_contener{width:1000px; margin:auto}
+.footer_agences, .footer_biens, .footer_links{padding-top:2px;float:left; width:300px;}
+.footer_agences h1, .footer_biens h1, .footer_links h1{color: #fff; text-transform: uppercase; font-weight: bold; font-size:2em;}
+.footer_agences a, .footer_biens a, .footer_links a{color:#fff; text-decoration: none;}
+.footer_agences a:hover, .footer_biens a:hover, .footer_links a:hover{color:#fff;text-decoration: underline;}

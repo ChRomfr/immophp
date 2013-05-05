@@ -1,0 +1,180 @@
+/* BALISE COMMUNE */
+img{border:none;}
+form dl{height:auto;overflow:hidden;margin-bottom:16px;}
+form dt{/*width:30%;*/text-align:left;padding-top:3px;float:left;display:block;}
+form dd{margin: 0 0 0 30%;padding: 0 0 0 5px;border:none;vertical-align:top;display:block;}
+form dt label{font-size: 13px;text-decoration:none;}
+dl{	height:auto;overflow:hidden;margin-bottom:16px;}  
+dt{ /*width:30%;*/ text-align:left;	padding-top:3px;float:left;	display:block;}
+dd{ margin: 0 0 0 30%;padding: 0 0 0 5px;border:none;vertical-align:top;display:block;}
+dt label{font-size: 13px;text-decoration:none;}
+h3{font-weight:bold; font: 16px ;font-size:18px; width:98%; margin:auto; margin-bottom:-5px;padding:0px 5px;margin-bottom: 10px;margin-top:10px;}
+
+/* ID COMMUN */
+#contenu{width:95%px; margin:auto; /*border:1px solid*/}
+
+/* CLASS COMMUN */
+.blok{padding-left:5px;}
+.calendrier{height:400px;width:1000px;border-collapse: collapse; border:solid 1px;}
+.calendrier_jour{height:15px;background-color:#2E90BD;color:#FFF;border:solid 1px black; width:14.28%;}
+.calendrier_day_number{ height:20%; border-bottom:solid 1px;}
+.calendrier_programmation_matin{height:29px; min-height:29px; border-bottom:solid 1px; width:100%;}
+.calendrier_programmation_aprem{height:29px; min-height:29px; border-top:solid 1px;width:100%;}
+.calendrier_cellule{border-collapse: collapse; border:solid 1px;vertical-align:top;}
+.center{text-align: center;}
+.clear{clear:both;}
+.fleft{float:left;}
+.fright{float:right;}
+.infobulle{  position: absolute; padding:3px 7px; -moz-border-radius:3px; -webkit-border-radius:3px; text-align:center;}
+.noborder {border:none;}
+.tadmin{width:95%; margin:auto; border-collapse: collapse; border:solid 1px;}
+.tadmin tbody td{border:solid 1px;}
+.tadmin tbody th{border:solid 1px;}
+.tadmin caption {border:solid 1px;}
+.tab_match{width:95%; margin:auto; border-collapse: collapse; border:solid 1px;}
+.tab_match td{border:solid 1px;}
+.tab_match li{list-style:none;}
+.sep {border-top: 1px dashed blue; margin-top:10px; padding-bottom: 10px;}
+
+
+.table_titre_profor{
+background-color:#2E90BD;
+font-weight: bold;
+font-size:12px;
+color:#FFF;
+border:solid 1px;
+}
+
+form dt label{color:blue;}
+form dl span a{ color:#A09C82; }
+dl span a{ color:#A09C82;} 
+dt label{color:blue;}
+
+.infobulle{background: #2E90BD;color:#FFF;}
+h3{color:#2E90BD;border-bottom:2px solid #2E90BD;border-bottom:2px solid #2E90BD;}
+
+
+.showData{	-moz-border-radius:10px; -webkit-border-radius:10px; margin:10px auto 10px; padding:15px;}
+.showData h1{font-size:11px; font-weight:bold; 	letter-spacing:2px;	margin-bottom:20px;	text-transform:uppercase;}
+
+form.form input[type=color]{outline:none;}
+form.form{-moz-border-radius:10px; -webkit-border-radius:10px; margin:30px auto 0; padding:20px;}
+form.form h1{ 	font-size:11px; font-weight:bold; letter-spacing:2px; margin-bottom:20px; text-transform:uppercase; }
+form.form dt:hover label:after{ content:" »"; }
+
+form dl{height:auto;overflow:hidden;margin-bottom:16px;}
+form dt{width:30%;	text-align:left;padding-top:3px;float:left;	display:block;}
+form dd{ margin: 0 0 0 30%; padding: 0 0 0 5px;	border:none;vertical-align:top;	display:block;}
+form dt label{ cursor:pointer;display:block;float:left;	font-size:13px;	font-weight:bold;line-height:28px;margin-bottom:5px;}
+
+/* -- ELEMENT DU FORMULAIRE -- */
+form.form input[type=text], div.showData input[type=text],
+form.form input[type=url], div.showData input[type=url],
+form.form input[type=email], div.showData input[type=email],
+form.form input[type=password], div.showData input[type=password],
+form.form textarea{
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	padding:5px;
+}
+
+form.form input[type=text], div.showData input[type=text]:focus,
+form.form input[type=url], div.showData input[type=url]:focus,
+form.form input[type=email], div.showData input[type=email]:focus,
+form.form input[type=password], div.showData input[type=password]:focus{
+	outline:none; /* Pour enlever le contour jaune lorsque l'on sélectionne un input dans Chrome */
+}
+
+form.form select, div.showData select{
+	cursor:pointer;
+	padding:3px;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+}
+
+form.form select, div.showData select:active,
+form.form select, div.showData select:focus{
+	outline:none;
+}
+
+form.form input[type=submit], div.showData input[type=submit],
+form.form a.submit,
+a.submit{
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	cursor:pointer;
+	font-family:Arial,sans-serif;
+	font-size:12px;
+	font-weight:bold;
+	/*margin-left:120px;*/
+	padding:5px 10px;
+	text-decoration:none;
+	text-transform:uppercase;
+}
+
+form.form input[type=submit]:hover,
+form.form a.submit:hover,
+a.submit:hover{text-decoration:none;}
+
+form.form input[type=submit]:active,
+form.form input[type=submit]:focus,
+form.form a.submit:active,
+form.form a.submit:focus,
+a.submit:active, 
+a.submit:focus	{outline:none;}
+
+form.form #options{	margin-bottom:20px;}
+form.form #options p{display:none;}
+form.form #options .show{display:block;}
+form.form #options:target .show{display:none;}
+form.form #options .hide{display:none;}
+form.form #options:target .hide{display:block;}
+form.form #options:target p{display:block;}
+
+/* SUBMIT HORS FORM */
+input.submit[type=submit],
+a.submit{
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	cursor:pointer;
+	font-family:Arial,sans-serif;
+	font-size:12px;
+	font-weight:bold;
+	/*margin-left:120px;*/
+	padding:5px 10px;
+	text-decoration:none;
+	text-transform:uppercase;
+}
+
+input.submit[type=submit]:hover,
+a.submit:hover{text-decoration:none;}
+
+/* CODE INFOBULLE */
+a.info{
+     color:#ccc;
+     text-shadow:0 -1px 0 black;                
+ }
+ 
+ a.info:hover,a.info:focus{
+     background:rgba(0,0,0,.4);
+     box-shadow:0 1px 0 rgba(255,255,255,.4);
+ }
+ 
+ a.info span{
+     position:absolute;   
+	 margin-top:23px;
+     margin-left:-35px;
+	 color:#09c;
+     background:rgba(0,0,0,.9);
+     padding:15px;
+     border-radius:3px;
+     box-shadow:0 0 2px rgba(0,0,0,.5);
+	 transform:scale(0) rotate(-12deg);
+	 transition:all .25s;
+	 opacity:0;
+ }
+ 
+ a.info:hover span, a.info:focus span{
+    transform:scale(1) rotate(0);   
+	opacity:1;
+ }
