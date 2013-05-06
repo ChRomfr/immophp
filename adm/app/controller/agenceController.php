@@ -1,5 +1,8 @@
 <?php
-
+/**
+*	IMMOPHP
+*	@link : http://www.immophp.fr
+*/
 class agenceController extends Controller{
 	
 	public function indexAction(){
