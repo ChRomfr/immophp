@@ -253,7 +253,7 @@
 				
 			</div>
 			<div class="fright">
-				Réaliser avec <a href="http://www.sharkphp.com" title="Another CMS/FRAMEWORK">Sharkphp <img src="{$config.url}{$config.url_dir}web/images/sharkphp.png" alt="" style="width:20px;" /></a>
+				Réaliser avec <a href="http://www.sharkphp.com" title="Another CMS/FRAMEWORK">Sharkphp <img src="{$config.url}web/images/sharkphp.png" alt="" style="width:20px;" /></a>
 			</div>
 			<div class="clear"></div>
 		</div><!-- /container -->
