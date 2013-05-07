@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html>
 <head>
 <title>{$config.titre_site}{if isset($ctitre)} :: {$ctitre}{else} :: {$config.slogan_site}{/if}</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
