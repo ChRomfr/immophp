@@ -108,12 +108,15 @@ class annonceController extends Controller{
 
         if( empty($Bien->video_code) ):
             $y=1;
-            foreach ($Bien['photos'] as $k => $v):
-               $Bien->photo = $v; 
-               if( $y == 1):
-                   break;
-               endif;
-            endforeach;
+            if($Bien->photos && count($Bien->photos) > 0){
+                foreach ($Bien['photos'] as $k => $v):
+                   $Bien->photo = $v; 
+                   if( $y == 1):
+                       break;
+                   endif;
+                endforeach;  
+            }
+            
         endif;
         
         $this->getFormValidatorJs();
