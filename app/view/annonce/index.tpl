@@ -19,8 +19,8 @@
         <div class="annonce_contener">
             <div class="annonce_titre">{$Annonce.nom}</div>
             <div class="annonce_photo">
-                {if count($Annonce.photos) > 0}
-                    <img src="{$config.url}{$config.url_dir}web/upload/bien/{$Annonce.id}/{$Annonce.photo}" alt="" style="width:220px; height:170;"/>                    
+                {if count($Annonce.photos) > 0 && isset($Annonce.photo)}
+                    <img src="{$config.url}web/upload/bien/{$Annonce.id}/{$Annonce.photo}" alt="" style="width:220px; height:170;"/>                    
                 {/if}
             </div>
             <div class="annonce_description">{$Annonce.description|truncate:140}</div>
@@ -45,11 +45,11 @@
 <!-- Lien RSS si active -->
 {if isset($xml_param)}
 <div id="xmlSearch">
-    <a href="{$Helper->getLink("xml/rss?nohtml{$xml_param}")}"><img src="{$config.url}{$config.url_dir}web/images/rss2.png" style="width:14px" alt="Flux RSS" /></a>
+    <a href="{$Helper->getLink("xml/rss?nohtml{$xml_param}")}"><img src="{$config.url}web/images/rss2.png" style="width:14px" alt="Flux RSS" /></a>
 </div>
 {/if}
 {/strip}
-<script>
+<script type="text/javacript">
 <!--
 // Recuperation de l url complete
 var fullPath = $(location).attr('href');
