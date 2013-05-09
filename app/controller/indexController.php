@@ -9,20 +9,27 @@ class indexController extends Controller{
 
 			$this->load_manager('bien');
 	        
-	        $Biens = $this->manager->bien->getAll(null,'b.add_on DESC',3);	        
-	        
-	        $i=0;
-	        foreach( $Biens as $Bien):
-	            $Biens[$i]['photos'] = getFilesInDir(ROOT_PATH . 'web' . DS . 'upload' . DS . 'bien' . DS . $Bien['id']);
-	            $y=1;
-	            foreach ($Biens[$i]['photos'] as $k => $v):
-	               $Biens[$i]['photo'] = $v; 
-	               if( $y == 1):
-	                   break;
-	               endif;
-	            endforeach;         
-	            $i++;
-	        endforeach;
+	        // Recuperation des biens
+	        $Biens = $this->manager->bien->getAll(null,'b.add_on DESC',3);
+
+	        if( count($Biens) > 0){
+	        	$i=0;
+	        	foreach( $Biens as $Bien){
+	        		// Recuperation des photos
+	        		$Biens[$i]['photos'] = getFilesInDir(ROOT_PATH . 'web' . DS . 'upload' . DS . 'bien' . DS . $Bien['id']);
+
+		            $y=1;
+		            if($Biens[$i]['photos'] && count($Biens[$i]['photos']) > 0){
+		            	foreach ($Biens[$i]['photos'] as $k => $v):
+			               $Biens[$i]['photo'] = $v; 
+			               if( $y == 1):
+			                   break;
+			               endif;
+			            endforeach; 
+		            }		                    
+		            $i++;
+	        	}
+	        }
 
 	        $this->app->smarty->assign('Annonces',$Biens);
 

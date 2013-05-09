@@ -25,12 +25,15 @@ function blokCoupDeCoeur($app){
 	$Tmp = getFilesInDir(ROOT_PATH . 'web' . DS . 'upload' . DS . 'bien' . DS . $Annonce['id'] . DS);
 
 	$y=1;
-	foreach( $Tmp as $key => $value ):
-		$Annonce['photo'] = $value;
-		if($y==1):
-			break;
-		endif;
-	endforeach;
+	if( $Tmp && count($Tmp) > 0){
+		foreach( $Tmp as $key => $value ):
+			$Annonce['photo'] = $value;
+			if($y==1):
+				break;
+			endif;
+		endforeach;
+	}
+	
 
 	// envoie des vars au template et generation du code HTML
 	$app->smarty->assign('Annonce',$Annonce);
