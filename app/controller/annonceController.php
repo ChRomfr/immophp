@@ -231,13 +231,15 @@ class annonceController extends Controller{
         $Bien->photos = getFilesInDir(ROOT_PATH . 'web' . DS . 'upload' . DS . 'bien' . DS . $Bien['id']);
 
         $y=1;
-        foreach ($Bien->photos as $k => $v):
-           $Bien->photo = $v; 
-           if( $y == 1):
-               break;
-           endif;
-        endforeach;
-
+		if( $Bien->photos && count($Bien->photos)){
+			foreach ($Bien->photos as $k => $v):
+			   $Bien->photo = $v; 
+			   if( $y == 1):
+				   break;
+			   endif;
+			endforeach;
+		}
+		
         # Generation du template        
         $html = $this->app->smarty->fetch( VIEW_PATH . 'annonce' . DS . 'pdf.tpl');
     
