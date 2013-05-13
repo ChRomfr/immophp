@@ -65,12 +65,14 @@ class agenceController extends Controller{
         foreach( $Biens as $Bien):
             $Biens[$i]['photos'] = getFilesInDir(ROOT_PATH . 'web' . DS . 'upload' . DS . 'bien' . DS . $Bien['id']);
             $y=1;
-            foreach ($Biens[$i]['photos'] as $k => $v):
-               $Biens[$i]['photo'] = $v; 
-               if( $y == 1):
-                   break;
-               endif;
-            endforeach;         
+            if( $Biens[$i]['photos'] && count($Biens[$i]['photos']) > 0 ){
+                foreach ($Biens[$i]['photos'] as $k => $v):
+                   $Biens[$i]['photo'] = $v; 
+                   if( $y == 1):
+                       break;
+                   endif;
+                endforeach; 
+            }        
             $i++;
         endforeach;
         

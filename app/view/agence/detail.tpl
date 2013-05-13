@@ -1,3 +1,4 @@
+{strip}
 <div id="agence_detail_contener">
     <div class="agence_detail_titre">{$Agence.nom}</div>
     <div class="agence_detail_description">{$Agence.description|nl2br}</div>
@@ -44,22 +45,7 @@
             <input type="hidden" name="contact[agence_id]" value="{$Agence.id}" />
             <input type="submit" value="{$lang.Envoyer}" />
         </form>
-    </div>
-    <script>
-    $(".ChampForm input, textarea").focus(function() {
-        $(this).parents(".ChampForm").find("label").hide();
-    });
-
-    $(".ChampForm input, textarea").blur(function() {
-        if ($(this).val() == "")
-            $(this).parents(".ChampForm").find("label").show();
-    });
-
-    $(".ChampForm input, textarea").each(function() {
-        if ($(this).val() != "")
-            $(this).parents(".ChampForm").find("label").hide();
-    });
-    </script>
+    </div>    
 
     <!-- DERNIERES ANNONCES -->
     <div class="well">
@@ -70,8 +56,8 @@
                 <div class="annonce_contener">
                     <div class="annonce_titre">{$Annonce.nom}</div>
                     <div class="annonce_photo">
-                        {if count($Annonce.photos) > 0}
-                            <img src="{$config.url}{$config.url_dir}web/upload/bien/{$Annonce.id}/{$Annonce.photo}" alt="" style="width:220px; height:170px;"/>                    
+                        {if count($Annonce.photos) > 0 && isset($Annonce.photo)}
+                            <img src="{$config.url}web/upload/bien/{$Annonce.id}/{$Annonce.photo}" alt="" style="width:220px; height:170px;"/>                    
                         {/if}
                     </div>
                     <div class="annonce_description">{$Annonce.description|truncate:140}</div>
@@ -91,3 +77,19 @@
         </div>
     </div>
 </div>
+{/strip}
+<script>
+    $(".ChampForm input, textarea").focus(function() {
+        $(this).parents(".ChampForm").find("label").hide();
+    });
+
+    $(".ChampForm input, textarea").blur(function() {
+        if ($(this).val() == "")
+            $(this).parents(".ChampForm").find("label").show();
+    });
+
+    $(".ChampForm input, textarea").each(function() {
+        if ($(this).val() != "")
+            $(this).parents(".ChampForm").find("label").hide();
+    });
+</script>
