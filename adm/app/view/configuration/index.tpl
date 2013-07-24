@@ -179,7 +179,6 @@
 	</fieldset>
 
 	<!-- PARAMETRE ANNONCE -->
-	{if $InfoInstall.install_type != 'bronze'}
 	<fieldset>
 		<legend>Bien</legend>
 
@@ -194,7 +193,6 @@
 		</div>
 
 	</fieldset>
-	{/if}
 	
 	{* NEWS *}
     <!--
